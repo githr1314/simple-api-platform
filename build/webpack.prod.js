@@ -9,6 +9,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const TerserPlugin = require('terser-webpack-plugin');
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 const prodConfig = {
     mode: 'production',
@@ -75,6 +76,10 @@ const prodConfig = {
         }),
         new AddAssetHtmlWebpackPlugin({
             filepath: path.resolve(__dirname, '../dll/dll.vendor.js'),
+        }),
+        new WebpackBuildNotifierPlugin({
+            title: "simple-api-platform",
+            suppressSuccess: true
         }),
         new BundleAnalyzerPlugin()                      // npm run build:test --report 分析代码结构和大小
     ]
