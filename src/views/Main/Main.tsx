@@ -7,7 +7,7 @@ import Home from '../Home/Home';
 import Project from '../Project/Project';
 import Interface from '../Interface/Interface';
 import { Layout, Menu, Row, Col, Dropdown, Space } from 'antd';
-import { HomeOutlined, AppstoreOutlined, ProfileOutlined, DownOutlined } from '@ant-design/icons';
+import { HomeOutlined, AppstoreOutlined, ProfileOutlined, DownOutlined, GithubOutlined } from '@ant-design/icons';
 const { Header, Footer, Sider, Content } = Layout;
 
 class Main extends React.Component {
@@ -68,7 +68,7 @@ function HeadComponent(props:Object):JSX.Element {
                     <span>接口系统</span>
                 </Space>
             </Col>
-            <Col span={4} offset={14}>
+            <Col  offset={14}>
                 <Dropdown overlay={userMenu}>
                     <Space>
                         <img className={Style.userIcon} src={User_Icon1}/>
@@ -76,6 +76,9 @@ function HeadComponent(props:Object):JSX.Element {
                         <DownOutlined/>
                     </Space>
                 </Dropdown>
+            </Col>
+            <Col className={Style.gitHubIcon} offset={1}>
+                <GithubOutlined onClick={(e:any) => window.location.href = 'https://github.com/githr1314/simple-api-platform'} />
             </Col>
         </Row>
     );
