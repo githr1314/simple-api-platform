@@ -1,9 +1,10 @@
 # simple-api-platform
-*一个简单的接口管理工具*
+*一个简单的接口管理工具（用户名和密码随便填写）*
+[演示地址](http://118.25.99.140:8890/#/login)
 ---
 ## 目的
 * 旨在构建一套Typescript+React+Redux+AntDesign+Webpack前端PC项目，可用于开发和生产；
-* 同时学习和使用react、typescript和webpack；
+* 学习和使用react、typescript以及webpack；
 
 ## 项目功能
 * 基于Typescript和React的语法使用AntdDesign的ui框架实现；
