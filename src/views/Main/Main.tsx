@@ -56,7 +56,7 @@ function HeadComponent(props:Object):JSX.Element {
                 <span><AppstoreOutlined />修改密码</span>
             </Menu.Item>
             <Menu.Item key="3">
-                <span><ProfileOutlined />退出登陆</span>
+                <span onClick={(e:any) => window.location.hash = '/login'}><ProfileOutlined />退出登陆</span>
             </Menu.Item>
         </Menu>
     );
