@@ -11,6 +11,15 @@ class App extends React.Component {
         super(props);
     }
 
+    // 登陆校验
+    componentDidMount() {
+        window.addEventListener('hashchange', (event:any) => {
+            if(event.newURL.split('#')[1] !== 'login' && sessionStorage.getItem('LoginStatus') !== 'Logined') {
+                window.location.hash = '/login';
+            }
+        });
+    }
+
     render() {
         return (
             <div style={{

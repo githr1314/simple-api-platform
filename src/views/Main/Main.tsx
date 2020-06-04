@@ -47,6 +47,12 @@ class Main extends React.Component {
  * @param props 
  */
 function HeadComponent(props:Object):JSX.Element {
+
+    const logout = (e:any) => {
+        sessionStorage.removeItem('LoginStatus');
+        window.location.hash = '/login';
+    }
+
     const userMenu = (
         <Menu>
             <Menu.Item key="1">
@@ -56,7 +62,7 @@ function HeadComponent(props:Object):JSX.Element {
                 <span><AppstoreOutlined />修改密码</span>
             </Menu.Item>
             <Menu.Item key="3">
-                <span onClick={(e:any) => window.location.hash = '/login'}><ProfileOutlined />退出登陆</span>
+                <span onClick={logout}><ProfileOutlined />退出登陆</span>
             </Menu.Item>
         </Menu>
     );

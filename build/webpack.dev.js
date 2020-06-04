@@ -28,7 +28,7 @@ const devConfig = {
         // 配置代理
         // proxy: {
         //     '/api/' : {
-        //         target: 'https:xxxx.com',
+        //         target: 'http//localhost:3001/',
         //         ws: true,
         //         changeOrigin: true,
         //     }

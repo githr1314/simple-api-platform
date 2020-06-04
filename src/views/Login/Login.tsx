@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Style from './style.scss';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 import { withRouter } from 'react-router-dom';
+import { login } from '../../http/api';
 
 const layout = {
     labelCol: {
@@ -24,8 +25,24 @@ class Login extends React.Component {
         super(props)
     }
 
-    onFinish(values:any) {
-        this.props?.history.push('/main');
+    componentDidMount() {
+        sessionStorage.removeItem('LoginStatus');
+    }
+
+    onFinish(value:any) {
+        const param = {
+            UserName: value.username,
+            PassWord: value.password
+        }
+        login(param).then((data:any) => {
+            if(data.flag) {
+                message.success('登陆成功');
+                sessionStorage.setItem('LoginStatus', 'Logined');
+                this.props?.history.push('/main');
+            }else {
+                message.error(data.message + ', 用户名或密码不正确');
+            }
+        });
     };
     
     render():JSX.Element {
